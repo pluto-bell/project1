@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 export default function Navbar() {
   return (
-    <nav className="hide">
+    <nav className="nav">
       <ul className="nav-list">
         <li className="nav-item">About</li>
         <li className="nav-item">Projects</li>

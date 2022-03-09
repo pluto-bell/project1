@@ -11,6 +11,8 @@ export default function App() {
     <div className="site-container">
       <div className="section1">
         <Toggle />
+      </div>
+      <div className="hide">
         <Navbar />
       </div>
       <div className="section2">

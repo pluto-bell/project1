@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
+//  CHANGE INTO PROP
+
 function Toggle() {
   const [isActive, setActive] = useState(false);
   const changeStyle = () => {
