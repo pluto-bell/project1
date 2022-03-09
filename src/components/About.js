@@ -1,6 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Card from "./AboutCard.js";
 
 export default function About() {
-  return <h1>About here</h1>;
+  return (
+    <div className="about-container">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
+  );
 }

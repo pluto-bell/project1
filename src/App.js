@@ -8,14 +8,20 @@ import WorkExamples from "./components/WorkExamples";
 
 export default function App() {
   return (
-    <div className="">
+    <div className="site-container">
       <div className="section1">
         <Toggle />
         <Navbar />
       </div>
-      <About />
-      <WorkExamples />
-      <Contact />
+      <div className="section2">
+        <About />
+      </div>
+      <div className="section3">
+        <WorkExamples />
+      </div>
+      <div className="section4">
+        <Contact />
+      </div>
     </div>
   );
 }

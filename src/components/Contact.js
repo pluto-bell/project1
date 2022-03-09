@@ -2,5 +2,5 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 export default function Contact() {
-  return <h1>Contact here</h1>;
+  return <div className="">Contact here</div>;
 }
