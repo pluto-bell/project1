@@ -1,14 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Card from "./AboutCard.js";
+import AboutCard from "./AboutCard.js";
+import aboutData from "./aboutData.js";
 
 export default function About() {
-  return (
-    <div className="about-container">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </div>
-  );
+  const aboutElements = aboutData.map((data) => {
+    return <AboutCard id={data.id} item1={data.item1} item2={data.item2} />;
+  });
+
+  return <div className="about-container">{aboutElements}</div>;
 }
