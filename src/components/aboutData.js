@@ -1,21 +1,21 @@
 export default [
   {
-    id: 1,
-    item1: "one",
-    item2: "two",
+    id: "one",
+    item1: "Bye",
+    item2: "Hello",
   },
   {
-    id: 2,
-    item1: "three",
-    item2: "four",
+    id: "two",
+    item1: "",
+    item2: "I'm Jane",
   },
   {
-    id: 3,
+    id: "three",
     item1: "five",
     item2: "six",
   },
   {
-    id: 4,
+    id: "four",
     item1: "seven",
     item2: "eight",
   },

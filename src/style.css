@@ -1,5 +1,6 @@
 * {
   font-family: "Space Grotesk", sans-serif;
+  scroll-behavior: smooth;
 }
 .hide {
   display: none;
@@ -27,9 +28,12 @@
 /**************/
 /**  NAV BAR  **/
 /**************/
-.bar1,
-.bar2,
-.bar3 {
+
+/* #about, #projects, #contact{
+
+} */
+
+.bar {
   width: 30px;
   height: 2px;
   background-color: #333;
@@ -37,16 +41,16 @@
   transition: 0.4s;
 }
 
-.change1 {
+.bar-change1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 4px);
   transform: rotate(-45deg) translate(-9px, 4px);
 }
 
-.change2 {
+.bar-change2 {
   opacity: 0;
 }
 
-.change3 {
+.bar-change3 {
   -webkit-transform: rotate(45deg) translate(-8px, -2px);
   transform: rotate(45deg) translate(-8px, -2px);
 }
@@ -104,6 +108,72 @@
     align-items: center;
     justify-content: center;
   }
+
+  .about-card {
+    position: relative;
+    height: 9em;
+  }
+
+  /* #about-item3 {
+    border: 1px solid black;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+  }
+  #one {
+    font: status-bar;
+    font-size: 2.3em;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
+  #two {
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: 200;
+    text-decoration: overline;
+  } */
+  /* 
+  .about-extra--one,
+  .about-extra--two,
+  .about-extra--four {
+    position: absolute;
+    height: 100%;
+    width: 47%;
+    left: 0%;
+
+    border: 1px solid black;
+    border-radius: 370px;
+
+    text-align: center;
+
+    font-size: 3em;
+    background-color: rgb(233, 118, 10);
+  }
+  .about-extra--one h2,
+  .about-extra--four h2 {
+    display: inline;
+    position: relative;
+    top: 20%;
+  }
+  .about-extra--two {
+    z-index: -1;
+    background-color: rgb(9, 134, 9);
+    height: 55%;
+    width: 25%;
+    left: 53%;
+  }
+  .about-extra--four {
+    background-color: rgb(230 139 164);
+  }
+
+  #about-card4 {
+    border: none;
+  } */
 
   .nav {
     display: inline-flex;
