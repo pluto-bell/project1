@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 export default [
   {
@@ -10,7 +11,7 @@ export default [
   },
   {
     id: "about2",
-    item1: "",
+    item1: "FRONT-END excites me FRONT-END excites me FRONT-END excites me",
     item2: "I'm",
     inner1: "",
     inner2: "",
@@ -27,6 +28,6 @@ export default [
     item1: "",
     item2: "",
     inner1: "D",
-    inner2: "",
+    inner2: "DESIGN makes me smile DESIGN makes me smile",
   },
 ];

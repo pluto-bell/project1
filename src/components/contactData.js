@@ -1,18 +1,14 @@
 export default [
   {
     id: 1,
-    type: "Contact me — Say hi!",
-  },
-  {
-    id: 2,
     type: "email",
   },
   {
-    id: 3,
+    id: 2,
     type: "insta",
   },
   {
-    id: 4,
+    id: 3,
     type: "etc.",
   },
 ];
