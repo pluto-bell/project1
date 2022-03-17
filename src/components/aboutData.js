@@ -1,22 +1,32 @@
+import React from "react";
+
 export default [
   {
-    id: "one",
+    id: "about1",
     item1: "Bye",
     item2: "Hello",
+    inner1: "J",
+    inner2: "",
   },
   {
-    id: "two",
+    id: "about2",
     item1: "",
-    item2: "I'm Jane",
+    item2: "I'm",
+    inner1: "",
+    inner2: "",
   },
   {
-    id: "three",
-    item1: "five",
-    item2: "six",
+    id: "about3",
+    item1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    item2: "",
+    inner1: "",
+    inner2: "",
   },
   {
-    id: "four",
-    item1: "seven",
-    item2: "eight",
+    id: "about4",
+    item1: "",
+    item2: "",
+    inner1: "D",
+    inner2: "",
   },
 ];
