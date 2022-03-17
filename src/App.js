@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+// import CircleType from "circletype";
+
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
