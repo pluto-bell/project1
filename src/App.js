@@ -20,7 +20,6 @@ export default function App() {
       </div>
       <Navbar isActive={toggle} toggle={handleToggle} />
       <div id="about" className="section2">
-        {/* ********* TODO ********* */}
         <About about="addClick" projects="addClick" contact="addClick" />
       </div>
       <div id="projects" className="section3">
