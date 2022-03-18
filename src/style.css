@@ -4,6 +4,7 @@
   background-color: transparent;
 }
 body {
+  margin: 0;
   background-color: rgb(247, 242, 234);
 }
 .hide {
@@ -66,12 +67,12 @@ body {
 /*/*/ /*/*/ /*/*/
 /*/*/ /*/*/ /*/*/
 /*/*/ /*/*/ /*/*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 748px) {
   /* GENERAL */
   .site-container {
     display: grid;
     grid-template-columns: 0.5fr 5fr 0.5fr;
-    grid-template-rows: 0.1fr 0fr 0.5fr 2fr 0.01fr 0.1fr;
+    grid-template-rows: 0.1fr 0fr 0.5fr 1.3fr 0.01fr 0.1fr;
   }
   .section1 {
     position: fixed;
@@ -87,6 +88,7 @@ body {
     grid-column: 2;
     grid-row: 4;
     grid-column: 1 / -1;
+    margin-bottom: 4em;
   }
   .section4 {
     grid-column: 2;
@@ -255,7 +257,6 @@ body {
     border: 1px solid rgb(37, 37, 37);
     background-color: rgb(247, 242, 234);
     border-radius: 50%;
-    z-index: ;
   }
   #about4 > .about-inner-item2 span {
     position: absolute;
@@ -318,6 +319,7 @@ body {
   }
   .work-type {
     display: grid;
+    margin: 0 0.5em;
     grid-template-rows: 100%;
     grid-template-columns: auto 10fr;
     overflow: hidden;
@@ -342,34 +344,57 @@ body {
     font-size: 15vw;
   }
   .work-name {
-    margin: 0 auto;
+    width: 100%;
     min-height: 250px;
     max-height: 250px;
-    border-radius: 25%/40%;
+    border-radius: 30%/25%;
     font-size: 8vw;
   }
 
   /* CONTACT CARD COMPONENT */
+  .contact-container {
+    text-align: center;
+    font-size: 4.5vw;
+    font-weight: 700;
+    font-style: italic;
+  }
+  .contact-container span {
+    font-weight: 100;
+    font-style: normal;
+  }
   .contact-card {
     display: grid;
-    grid-template-rows: 4fr 0.5fr 5fr 5fr 5fr;
     justify-content: center;
+    font-size: 5vw;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
   }
-  .contact-text {
-    grid-row: 2;
+  .contact-outer > p {
+    margin: 0;
+    padding: 1vw;
   }
-  .contact-item {
+  .contact-outer {
     margin: 0 auto;
-    align-self: center;
+    min-height: 50vw;
+    min-width: 50vw;
+    max-width: 50vw;
+    max-height: 50vw;
+    height: 100;
+    border: 1px solid rgb(37, 37, 37);
+    border-radius: 50%;
+    background-color: #0053ad;
+    z-index: -10;
   }
-  .contact-type1 {
-    grid-row: 3;
+
+  #contact-card1 {
+    margin-top: 0.5em;
   }
-  .contact-type2 {
-    grid-row: 4;
+  #contact-card2 .contact-outer {
+    background-color: #f65600;
   }
-  .contact-type3 {
-    grid-row: 5;
+  #contact-card3 .contact-outer {
+    background-color: gold;
   }
 }
 

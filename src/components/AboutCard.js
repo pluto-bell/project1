@@ -6,7 +6,7 @@ export default function AboutCard(props) {
   useEffect(() => {
     const circleType = document.getElementById("about2").firstElementChild;
     const circleType2 = document.getElementById("about4").lastElementChild;
-    console.log(circleType2.lastElementChild);
+
     new CircleType(circleType);
     new CircleType(circleType2.lastElementChild);
   }, []);

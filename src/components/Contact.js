@@ -5,12 +5,12 @@ import contactData from "./contactData.js";
 
 export default function Contact() {
   const contactCards = contactData.map((data) => {
-    return <ContactCard type={data.type} />;
+    return <ContactCard id={data.id} type={data.type} />;
   });
 
   return (
     <div className="contact-container">
-      Contact me — Say hi!
+      Contact me — <span>Say hi!</span>
       {contactCards}
     </div>
   );
