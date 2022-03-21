@@ -9,9 +9,9 @@ export default [
   {
     id: "about2",
     item1: "",
-    item2: "I'm",
+    item2: "",
     inner1: "",
-    inner2: "",
+    inner2: "I'm ",
   },
   {
     id: "about3",
