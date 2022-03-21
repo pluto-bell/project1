@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
 export default [
   {
     id: "about1",
@@ -11,14 +8,14 @@ export default [
   },
   {
     id: "about2",
-    item1: "FRONT-END excites me FRONT-END excites me FRONT-END excites me",
+    item1: "",
     item2: "I'm",
     inner1: "",
     inner2: "",
   },
   {
     id: "about3",
-    item1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed",
+    item1: "",
     item2: "",
     inner1: "",
     inner2: "",
@@ -28,6 +25,41 @@ export default [
     item1: "",
     item2: "",
     inner1: "D",
-    inner2: "DESIGN makes me smile DESIGN makes me smile",
+    inner2: "",
+  },
+  {
+    id: "about5",
+    item1: "",
+    item2: "",
+    inner1: "D",
+    inner2: "",
+  },
+  {
+    id: "about6",
+    item1: "",
+    item2: "",
+    inner1: "",
+    inner2: "",
+  },
+  {
+    id: "about7",
+    item1: "",
+    item2: "",
+    inner1: "",
+    inner2: "",
+  },
+  {
+    id: "about8",
+    item1: "",
+    item2: "",
+    inner1: "",
+    inner2: "",
+  },
+  {
+    id: "about9",
+    item1: "",
+    item2: "",
+    inner1: "",
+    inner2: "",
   },
 ];
