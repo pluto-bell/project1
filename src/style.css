@@ -296,7 +296,7 @@ body {
   }
 
   #about2 .about-inner-item1 {
-    background-image: url("svgs/project1-designSmile.svg");
+    background-image: url("svgs/project1-FEexcitesMe.svg");
     background-position: center;
     background-repeat: no-repeat;
     image-orientation: inherit;
@@ -790,6 +790,14 @@ body {
     image-orientation: inherit;
     background-size: 12vw;
   }
+  #about8 .about-inner-item1::after {
+    content: "";
+    border-bottom: 1px solid rgb(37, 37, 37);
+    position: absolute;
+    width: 4.5vw;
+    top: 6.2vw;
+    right: 8%;
+  }
   #about8 .about-inner-item2 {
     position: absolute;
     outline: 1px solid rgb(37, 37, 37);
@@ -806,6 +814,7 @@ body {
     border-radius: 50%;
     background-color: #f65600;
   }
+
   #about9 {
     grid-column: 6;
     grid-row: 2/3;
