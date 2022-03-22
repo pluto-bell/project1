@@ -63,16 +63,16 @@ export default function AboutCard(props) {
       innerItem.children[1].style.transform = `scale(80%)`;
     }
     if (id === "7-1") {
-      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
-      innerItem.children[1].style.transform = `scale(80%)`;
+      innerItem.children[0].style.transition = "transform 2s ease-in-out 0s";
+      innerItem.children[0].style.transform = `rotate(380deg)`;
     }
     if (id === "8-1") {
       innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
       innerItem.children[1].style.transform = `scale(120%)`;
     }
     if (id === "4-2") {
-      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
-      innerItem.children[1].style.transform = `scale(80%)`;
+      innerItem.children[1].style.transition = "transform 2s ease-in-out 0s";
+      innerItem.children[1].style.transform = `rotate(380deg)`;
     }
     if (id === "7-2") {
       innerItem.children[1].style.backgroundColor = `#f65600`;

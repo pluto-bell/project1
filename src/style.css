@@ -91,12 +91,15 @@ body {
   font-size: 15vw;
   color: black;
 }
-#about4 .about-inner-item2 {
+#about4 .about-inner-item2 h2 {
+  height: 15vw;
+  width: 15vw;
+
   background-image: url("svgs/project1-designSmile.svg");
   background-position: center;
   background-repeat: no-repeat;
   image-orientation: inherit;
-  background-size: 38vw;
+  background-size: 12vw;
 }
 #about1 > .about-inner-item1 h2 {
   margin: auto 0;
@@ -208,9 +211,9 @@ body {
   left: 50%;
 }
 #about4 > .about-inner-item2 h2 {
-  margin: 0 auto;
+  /* margin: 0 auto;
   width: 70%;
-  height: 70%;
+  height: 70%; */
   border: 1px solid rgb(37, 37, 37);
   background-color: rgb(247, 242, 234);
   border-radius: 50%;
@@ -622,6 +625,7 @@ body {
   #about4 span {
     display: none;
   }
+
   #about4 .about-inner-item1 {
     background-color: #0053ad;
   }
@@ -634,17 +638,17 @@ body {
     border-radius: 50%;
     background-color: rgb(247, 242, 234);
   }
-  #about4 .x {
+  #about4 .x,
+  #about7 .x,
+  #about8 .x {
     position: absolute;
-    right: 0;
-    top: 0;
   }
-  #about4 .x::before,
+  #about4 .x::after,
   #about7 .x::after {
     position: absolute;
     content: "x";
-    right: 4.2vw;
-    top: 0.5vw;
+    right: -2.7vw;
+    top: -6.5vw;
     color: rgb(247, 242, 234);
     font-size: 9vw;
     -webkit-text-stroke: 1px rgb(37, 37, 37);
@@ -752,20 +756,17 @@ body {
     grid-row: 1/2;
     border: none;
   }
-  #about7 .about-inner-item1 {
+  #about7 .about-inner-item1 h2 {
     background-image: url("svgs/project1-FEexcitesMe.svg");
     background-position: center;
     background-repeat: no-repeat;
     image-orientation: inherit;
     background-size: 12vw;
+    width: 15vw;
+    height: 15vw;
   }
-  #about7 .x {
-    position: absolute;
-  }
-  #about7 .x::after {
-    right: -2.7vw;
-    top: -6.5vw;
 
+  #about7 .x::after {
     color: rgb(37, 37, 37);
   }
   #about7 .about-inner-item2 {
@@ -791,22 +792,21 @@ body {
     grid-row: 2/3;
     border: none;
   }
-  #about8 .about-inner-item1,
-  #about9 .about-inner-item2 {
-    background-image: url("svgs/project1-goodtaste.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    image-orientation: inherit;
-    background-size: 12vw;
-  }
-  #about8 .about-inner-item1::after {
-    content: "";
-    border-bottom: 1px solid rgb(37, 37, 37);
+
+  #about8 .x {
     position: absolute;
-    width: 4.5vw;
-    top: 6.2vw;
-    right: 8%;
+    content: url("svgs/project1-goodtaste.svg");
+    width: 10vw;
+    top: 45%;
   }
+
+  #about8 .x::after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgb(37, 37, 37);
+    width: 20vw;
+  }
+
   #about8 .about-inner-item2 {
     position: absolute;
     outline: 1px solid rgb(37, 37, 37);
@@ -828,9 +828,14 @@ body {
     grid-column: 6;
     grid-row: 2/3;
   }
+
   #about9 .about-inner-item2 {
     background-image: url("svgs/project1-butlove.svg");
     background-size: 7vw;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    image-orientation: inherit;
     outline: none;
   }
   #about9 .about-inner-item1 span {
