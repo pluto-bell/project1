@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import CircleType from "circletype";
 
-function transitionEl(card, child) {
-  card.children[child].style.transition = "transform 650ms, opacity 600ms";
-}
-function transformEl(card, child, num1, num2) {
-  card.children[child].style.transform = `translate(${num1}%, ${num2}%)`;
-}
-
-function scaleEl(card, child, num) {
-  card.children[child].style.transform = `scale(80%)`;
-}
+//   else if (card.id === "about8") {
+//     console.log(card);
+//     // const innerCard = card.children[3].children[1];
+//     // innerCard.style.transition = "transform 650ms, opacity 600ms";
+//     // innerCard.style.transform = `scale(150%)`;
+//   } else if (card.id === "about7") {
+//     const innerCard = card.children[3].children[1];
+//     innerCard.style.backgroundColor = `#f65600`;
+//   }
 
 export default function AboutCard(props) {
   const [animate, setAnimate] = useState(false);
@@ -26,6 +25,9 @@ export default function AboutCard(props) {
 
   function handleMouseEvent(e) {
     const card = e.target.closest(".about-card");
+    const inner1 = e.target.closest(".about-inner-item1");
+    const inner2 = e.target.closest(".about-inner-item2");
+
     if (card.id === "about2") {
       transitionEl(card, 2);
       transformEl(card, 2, 0, 100);
@@ -43,40 +45,43 @@ export default function AboutCard(props) {
     } else if (card.id === "about6") {
       transitionEl(card, 3);
       transformEl(card, 3, 0, -100);
-    } else if (card.id === "about4") {
-      const newCard = card.children[2].children[1];
-      newCard.style.transition = "transform 650ms, opacity 600ms";
-      newCard.style.transform = `scale(80%)`;
     }
-
-    // console.log(card.children[2].id);
-    // //
-    // const innerOneItemCollection = document.getElementsByClassName(
-    //   "about-inner-item1"
-    // );
-    // const innerTwoItemCollection = document.getElementsByClassName(
-    //   "about-inner-item2"
-    // );
-    // const filterIndexValues = [0, 1, 2, 4, 5, 8];
-    // function filter(values, index) {
-    //   return filterIndexValues.indexOf(index) == -1;
-    // }
-    // const innerItems1Arr = Array.from(innerOneItemCollection).filter(filter);
-    // const innerItems2Arr = Array.from(innerTwoItemCollection).filter(filter);
   }
 
-  // function handleHover(e){
-
-  //   else if (card.id === "about8") {
-  //     console.log(card);
-  //     // const innerCard = card.children[3].children[1];
-  //     // innerCard.style.transition = "transform 650ms, opacity 600ms";
-  //     // innerCard.style.transform = `scale(150%)`;
-  //   } else if (card.id === "about7") {
-  //     const innerCard = card.children[3].children[1];
-  //     innerCard.style.backgroundColor = `#f65600`;
+  // function innerItem(id, item, style) {
+  //   if (id === item) {
+  //     style;
   //   }
   // }
+
+  function handleInnerMouseEvent(e, num) {
+    const innerItem = e.target.closest(".about-inner");
+    const id = innerItem.id.replace(/[^\d.-]/g, "");
+
+    if (id === "4-1") {
+      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
+      innerItem.children[1].style.transform = `scale(80%)`;
+    }
+    if (id === "7-1") {
+      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
+      innerItem.children[1].style.transform = `scale(80%)`;
+    }
+    if (id === "8-1") {
+      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
+      innerItem.children[1].style.transform = `scale(120%)`;
+    }
+    if (id === "4-2") {
+      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
+      innerItem.children[1].style.transform = `scale(80%)`;
+    }
+    if (id === "7-2") {
+      innerItem.children[1].style.backgroundColor = `#f65600`;
+    }
+    if (id === "8-2") {
+      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
+      innerItem.children[1].style.transform = `scale(150%)`;
+    }
+  }
 
   return (
     <div
@@ -91,17 +96,40 @@ export default function AboutCard(props) {
         {props.item2}
         <span></span>
       </div>
-      <div className="about-inner-item1" id={`${props.id}-inner1`}>
+      <div
+        className="about-inner about-inner-item1"
+        id={`${props.id}-inner1`}
+        onMouseEnter={(e) => {
+          handleInnerMouseEvent(e);
+        }}
+      >
         <h2>
           <span>{props.inner1}</span>
         </h2>
         <div className="x"></div>
       </div>
-      <div className="about-inner-item2" id={`${props.id}-inner2`}>
+      <div
+        className="about-inner about-inner-item2"
+        id={`${props.id}-inner2`}
+        onMouseEnter={(e) => {
+          handleInnerMouseEvent(e);
+        }}
+      >
         <div className="heart"></div>
         <h2></h2>
         <span>{props.inner2}</span>
       </div>
     </div>
   );
+}
+
+function transitionEl(card, child) {
+  card.children[child].style.transition = "transform 650ms, opacity 600ms";
+}
+function transformEl(card, child, num1, num2) {
+  card.children[child].style.transform = `translate(${num1}%, ${num2}%)`;
+}
+
+function scaleEl(card, child, num) {
+  card.children[child].style.transform = `scale(80%)`;
 }
