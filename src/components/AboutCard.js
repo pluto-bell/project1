@@ -2,18 +2,16 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import CircleType from "circletype";
 
-//   else if (card.id === "about8") {
-//     console.log(card);
-//     // const innerCard = card.children[3].children[1];
-//     // innerCard.style.transition = "transform 650ms, opacity 600ms";
-//     // innerCard.style.transform = `scale(150%)`;
-//   } else if (card.id === "about7") {
-//     const innerCard = card.children[3].children[1];
-//     innerCard.style.backgroundColor = `#f65600`;
-//   }
+// function resetElement(state, set el) {
+//   if (state) {
+//     setState(prev => false)
+//     el.style.transform = "none";
+//   } else { return }
+// }
 
 export default function AboutCard(props) {
-  const [animate, setAnimate] = useState(false);
+  const [outerAnimate, setOuterAnimate] = useState(false);
+  const [innerAnimate, setInnerAnimate] = useState(false);
 
   useEffect(() => {
     const circleType = document.getElementById("about2").firstElementChild;
@@ -27,11 +25,11 @@ export default function AboutCard(props) {
     const card = e.target.closest(".about-card");
     const inner1 = e.target.closest(".about-inner-item1");
     const inner2 = e.target.closest(".about-inner-item2");
-
+    console.log(document.getElementsByClassName("about-card"));
     if (card.id === "about2") {
       transitionEl(card, 2);
       transformEl(card, 2, 0, 100);
-      card.children[2].style.zIndex = "500%";
+      card.children[2].style.zIndex = "500";
     } else if (card.id === "about9") {
       transitionEl(card, 2);
       transformEl(card, 2, 0, 100);
@@ -48,38 +46,32 @@ export default function AboutCard(props) {
     }
   }
 
-  // function innerItem(id, item, style) {
-  //   if (id === item) {
-  //     style;
-  //   }
-  // }
-
   function handleInnerMouseEvent(e, num) {
     const innerItem = e.target.closest(".about-inner");
     const id = innerItem.id.replace(/[^\d.-]/g, "");
 
     if (id === "4-1") {
-      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
-      innerItem.children[1].style.transform = `scale(80%)`;
+      transitionEl(innerItem, 1);
+      scaleEl(innerItem, 1, 80);
     }
     if (id === "7-1") {
       innerItem.children[0].style.transition = "transform 2s ease-in-out 0s";
-      innerItem.children[0].style.transform = `rotate(380deg)`;
+      rotateEl(innerItem, 0, 380);
     }
     if (id === "8-1") {
-      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
-      innerItem.children[1].style.transform = `scale(120%)`;
+      transitionEl(innerItem, 1);
+      scaleEl(innerItem, 1, 120);
     }
     if (id === "4-2") {
       innerItem.children[1].style.transition = "transform 2s ease-in-out 0s";
-      innerItem.children[1].style.transform = `rotate(380deg)`;
+      rotateEl(innerItem, 1, 380);
     }
     if (id === "7-2") {
       innerItem.children[1].style.backgroundColor = `#f65600`;
     }
     if (id === "8-2") {
-      innerItem.children[1].style.transition = "transform 650ms, opacity 600ms";
-      innerItem.children[1].style.transform = `scale(150%)`;
+      transitionEl(innerItem, 1);
+      scaleEl(innerItem, 1, 150);
     }
   }
 
@@ -90,6 +82,7 @@ export default function AboutCard(props) {
       onMouseEnter={(e) => {
         handleMouseEvent(e);
       }}
+      outerAnimate={outerAnimate}
     >
       <div className="about-item">{props.item1}</div>
       <div className="about-item">
@@ -102,6 +95,7 @@ export default function AboutCard(props) {
         onMouseEnter={(e) => {
           handleInnerMouseEvent(e);
         }}
+        innerAnimate={innerAnimate}
       >
         <h2>
           <span>{props.inner1}</span>
@@ -131,5 +125,8 @@ function transformEl(card, child, num1, num2) {
 }
 
 function scaleEl(card, child, num) {
-  card.children[child].style.transform = `scale(80%)`;
+  card.children[child].style.transform = `scale(${num}%)`;
+}
+function rotateEl(card, child, num) {
+  card.children[child].style.transform = `rotate(${num}deg)`;
 }
