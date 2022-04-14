@@ -91,46 +91,36 @@ body {
   font-size: 15vw;
   color: black;
 }
-#about4 .about-inner-item2 {
+#about4 .about-inner-item2 h2 {
+  height: 15vw;
+  width: 15vw;
+
   background-image: url("svgs/project1-designSmile.svg");
   background-position: center;
   background-repeat: no-repeat;
   image-orientation: inherit;
-  background-size: 38vw;
+  background-size: 12vw;
 }
 #about1 > .about-inner-item1 h2 {
   margin: auto 0;
 }
 
-#about2 > .about-item:nth-child(1) {
-  font-size: 3.1vw;
-}
-#about2 > .about-item:nth-child(2) {
-  font-size: 3vw;
-  border-top: 1px solid rgb(37, 37, 37);
-}
-#about2 > .about-item:nth-child(2) span::after {
+#about2 > .about-inner-item2 span::after {
   content: " JANE";
+  border-top: 1px solid rgb(37, 37, 37);
   color: rgb(37, 37, 37);
-  font-weight: 400;
+  font-weight: 800;
   font-style: italic;
 }
 #about2 > .about-inner-item2 {
+  z-index: -500;
   position: absolute;
   outline: 1px solid rgb(37, 37, 37);
   width: 50%;
   height: 100%;
   border-radius: 50%;
   left: 50%;
-}
-#about2 > .about-inner-item2 h2 {
-  margin: 0 auto;
-  width: 60%;
-  height: 60%;
-  border: 1px solid rgb(37, 37, 37);
-  border-radius: 50%;
-  background-color: green;
-  z-index: -10;
+  font-size: 3vw;
 }
 #about2 .x {
   --color: rgb(37, 37, 37);
@@ -180,22 +170,23 @@ body {
   height: 100%;
   border-radius: 50%;
   left: 50%;
+  z-index: 20;
+  background-color: rgb(247, 242, 234);
 }
 #about3 > .about-inner-item2 h2 {
   margin: 0 auto;
-  width: 27%;
-  height: 25%;
+  width: 30%;
+  height: 28%;
   border: 1px solid rgb(37, 37, 37);
   border-radius: 50%;
   background-color: #0053ad;
-  z-index: -10;
+  z-index: 20;
 }
 #about4 {
   border: none;
 }
 
-#about4 .heart,
-#about9 .heart {
+#about4 .heart {
   position: absolute;
   margin-top: 4vw;
   width: 15vw;
@@ -220,9 +211,6 @@ body {
   left: 50%;
 }
 #about4 > .about-inner-item2 h2 {
-  margin: 0 auto;
-  width: 70%;
-  height: 70%;
   border: 1px solid rgb(37, 37, 37);
   background-color: rgb(247, 242, 234);
   border-radius: 50%;
@@ -294,7 +282,16 @@ body {
     grid-column: 2;
     grid-row: 5;
   }
-
+  #about2 > .about-inner-item2 h2 {
+    margin: 0 auto;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border: 1px solid rgb(37, 37, 37);
+    border-radius: 50%;
+    background-color: #1c7b32;
+    z-index: -10;
+  }
   #about2 .about-inner-item1 {
     background-image: url("svgs/project1-FEexcitesMe.svg");
     background-position: center;
@@ -532,6 +529,9 @@ body {
     border-radius: 50%;
     left: 0%;
   }
+  #about6 .about-inner-item2 {
+    background-color: rgb(247, 242, 234);
+  }
   #about1,
   #about3,
   #about5 {
@@ -557,26 +557,31 @@ body {
     grid-column: 3;
     grid-row: 1/2;
   }
-
-  #about2 > .about-item:nth-child(2) {
-    font-size: 1vw;
+  #about2 .about-inner-item1 {
+    background-color: rgb(247, 242, 234);
+    z-index: 500;
   }
+
   #about2 .about-inner-item1 > div {
     --color: none;
     clip-path: none;
     width: auto;
 
     margin: 0 auto;
-    width: 27%;
-    height: 25%;
+    width: 30%;
+    height: 28%;
     border: 1px solid rgb(37, 37, 37);
     border-radius: 50%;
     background-color: #ffc610;
     z-index: -10;
   }
-  #about2 .about-inner-item2,
-  #about2 .about-inner-item2 h2 {
-    display: none;
+  #about2 .about-inner-item2 {
+    width: 100%;
+    height: 50%;
+    left: 0;
+    top: 50%;
+    outline: none;
+    font-size: 1vw;
   }
 
   #about3 {
@@ -617,6 +622,7 @@ body {
   #about4 span {
     display: none;
   }
+
   #about4 .about-inner-item1 {
     background-color: #0053ad;
   }
@@ -629,14 +635,17 @@ body {
     border-radius: 50%;
     background-color: rgb(247, 242, 234);
   }
-  #about4 .x {
+  #about4 .x,
+  #about7 .x,
+  #about8 .x {
+    position: absolute;
   }
   #about4 .x::after,
   #about7 .x::after {
     position: absolute;
     content: "x";
-    right: 4.2vw;
-    top: 0.5vw;
+    right: -2.7vw;
+    top: -6.5vw;
     color: rgb(247, 242, 234);
     font-size: 9vw;
     -webkit-text-stroke: 1px rgb(37, 37, 37);
@@ -674,6 +683,7 @@ body {
   #about5 .about-inner-item1 {
     font-size: 5vw;
     background-color: #ff8caf;
+    z-index: 20;
   }
   #about5 .about-inner-item2 {
     position: relative;
@@ -724,8 +734,8 @@ body {
   }
   #about6 .about-inner-item2 h2 {
     margin: 0 auto;
-    width: 27%;
-    height: 25%;
+    width: 30%;
+    height: 28%;
     border: 1px solid rgb(37, 37, 37);
     border-radius: 50%;
     background-color: #1c7b32;
@@ -734,29 +744,26 @@ body {
     content: "";
     border-bottom: 1px solid rgb(37, 37, 37);
     position: absolute;
-    width: 6vw;
-    top: 12.2vw;
-    right: 43%;
+    width: 6.3vw;
+    top: 12vw;
+    right: 40%;
   }
   #about7 {
     grid-column: 4;
     grid-row: 1/2;
     border: none;
   }
-  #about7 .about-inner-item1 {
+  #about7 .about-inner-item1 h2 {
     background-image: url("svgs/project1-FEexcitesMe.svg");
     background-position: center;
     background-repeat: no-repeat;
     image-orientation: inherit;
     background-size: 12vw;
+    width: 15vw;
+    height: 15vw;
   }
-  #about7 .x {
-    position: absolute;
-  }
-  #about7 .x::after {
-    right: -2.7vw;
-    top: -6.5vw;
 
+  #about7 .x::after {
     color: rgb(37, 37, 37);
   }
   #about7 .about-inner-item2 {
@@ -782,22 +789,21 @@ body {
     grid-row: 2/3;
     border: none;
   }
-  #about8 .about-inner-item1,
-  #about9 .about-inner-item1 {
-    background-image: url("svgs/project1-goodtaste.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    image-orientation: inherit;
-    background-size: 12vw;
-  }
-  #about8 .about-inner-item1::after {
-    content: "";
-    border-bottom: 1px solid rgb(37, 37, 37);
+
+  #about8 .x {
     position: absolute;
-    width: 4.5vw;
-    top: 6.2vw;
-    right: 8%;
+    content: url("svgs/project1-goodtaste.svg");
+    width: 10vw;
+    top: 45%;
   }
+
+  #about8 .x::after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgb(37, 37, 37);
+    width: 20vw;
+  }
+
   #about8 .about-inner-item2 {
     position: absolute;
     outline: 1px solid rgb(37, 37, 37);
@@ -808,8 +814,8 @@ body {
   }
   #about8 .about-inner-item2 h2 {
     margin: 0 auto;
-    width: 27%;
-    height: 25%;
+    width: 30%;
+    height: 28%;
     border: 1px solid rgb(37, 37, 37);
     border-radius: 50%;
     background-color: #f65600;
@@ -819,28 +825,41 @@ body {
     grid-column: 6;
     grid-row: 2/3;
   }
-  #about9 .about-inner-item1 {
+
+  #about9 .about-inner-item2 {
     background-image: url("svgs/project1-butlove.svg");
     background-size: 7vw;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    image-orientation: inherit;
     outline: none;
-    display: none;
   }
-  #about9 .heart {
+  #about9 .about-inner-item1 span {
     margin-top: 1vw;
     width: 5vw;
     z-index: 100;
-  }
-  #about9 .about-inner-item2 {
     position: absolute;
+    margin-top: 2vw;
+    right: 2.1vw;
+    top: 0.6vw;
+    aspect-ratio: 1;
+    border-image: radial-gradient(rgb(37, 37, 37) 69%, #0000 70%) 84.5%
+      fill/100%;
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+  }
+  #about9 .about-inner-item1 {
     background-color: #ffc610;
     outline: 1px solid rgb(37, 37, 37);
     width: 100%;
     height: 50%;
     border-radius: 50%;
   }
-  #about9 .about-inner-item2 h2 {
+  #about9 .about-inner-item1 h2 {
     position: absolute;
-    margin: 0 auto;
+    top: -5vw;
+    left: 2.2vw;
+
     width: 67%;
     height: 65%;
     border: 1px solid rgb(37, 37, 37);
@@ -853,5 +872,6 @@ body {
     top: 13.3vw;
     height: 10vw;
     overflow: hidden;
+    z-index: -20;
   }
 }
