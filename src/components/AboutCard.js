@@ -17,6 +17,7 @@ const initialState = {
   about8inner2: false,
 };
 
+//TODO: reset animations when mouse _leaves_ the div container of whole section
 export default function AboutCard(props) {
   const [animate, setAnimate] = useState(initialState);
 
