@@ -10,6 +10,7 @@ body {
 .hide {
   display: none;
 }
+
 .site-container {
   display: grid;
   grid-template-columns: 1fr 15fr;
@@ -29,11 +30,19 @@ body {
   grid-row: 3;
 }
 
+.work-name p {
+  margin: 0;
+}
+
 /* General Styling */
 /**************/
 /**  NAV BAR  **/
 /**************/
-
+/* TODO: fade in animation on nav-bar */
+.nav-bar .nav {
+  width: 80vw;
+  margin: 0 0 0 10vw;
+}
 .bar {
   width: 30px;
   height: 2px;
@@ -219,6 +228,19 @@ body {
   position: absolute;
   font-size: 4.4vw;
 }
+
+.nav-list {
+  font-size: 2vw;
+  list-style: none;
+  padding: inherit;
+  text-align: center;
+}
+.nav-item {
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  font-size: 2em;
+  text-transform: uppercase;
+}
 .about-inner-item1 {
   position: absolute;
   outline: 1px solid rgb(37, 37, 37);
@@ -239,6 +261,86 @@ body {
   border-radius: 500px;
   align-items: center;
   font-size: 6vw;
+}
+/* WORK CARD COMPONENT */
+.work-card,
+.type {
+  font-weight: 100;
+}
+.work-type {
+  display: grid;
+  margin: 0 0.5em;
+  grid-template-rows: 100%;
+  grid-template-columns: auto 10fr;
+  overflow: hidden;
+}
+.type {
+  font-size: 4vw;
+  text-transform: uppercase;
+  grid-column: 1;
+}
+.underline {
+  border-bottom: 1px solid rgb(37, 37, 37);
+  position: relative;
+  align-self: baseline;
+  top: 50%;
+  left: 1%;
+  grid-column: 2;
+}
+.work-item,
+.nav {
+  display: flex;
+  width: 95%;
+  height: 8em;
+  border: 1px solid rgb(37, 37, 37);
+  border-radius: 500px;
+  align-items: center;
+  justify-content: center;
+}
+/* CONTACT CARD COMPONENT */
+.contact-container {
+  text-align: center;
+  font-size: 4.5vw;
+  font-weight: 700;
+  font-style: italic;
+}
+.contact-container span {
+  font-weight: 100;
+  font-style: normal;
+}
+.contact-card {
+  display: grid;
+  justify-content: center;
+  font-size: 5vw;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-align: center;
+}
+.contact-outer > p {
+  margin: 0;
+  padding: 1vw;
+}
+.contact-outer {
+  margin: 0 auto;
+  min-height: 50vw;
+  min-width: 50vw;
+  max-width: 50vw;
+  max-height: 50vw;
+  height: 100;
+  border: 1px solid rgb(37, 37, 37);
+  border-radius: 50%;
+  background-color: #0053ad;
+  z-index: -10;
+}
+
+#contact-card1 {
+  margin-top: 0.5em;
+}
+#contact-card2 .contact-outer {
+  background-color: #f65600;
+}
+#contact-card3 .contact-outer {
+  background-color: #ffc610;
 }
 
 /*/*/ /*/*/ /*/*/
@@ -316,7 +418,7 @@ body {
     top: 30vw;
     right: 19vw;
   }
-  .work-item,
+  /* .work-item,
   .nav {
     display: flex;
     width: 95%;
@@ -325,7 +427,7 @@ body {
     border-radius: 500px;
     align-items: center;
     justify-content: center;
-  }
+  } */
 
   .nav {
     display: inline-flex;
@@ -334,42 +436,8 @@ body {
     background-color: rgb(247, 242, 234);
     z-index: 9000;
   }
-  .nav-list {
-    list-style: none;
-  }
-  .nav-item {
-    margin-bottom: 0.5em;
-    font-weight: 700;
-    font-size: 2em;
-    text-transform: uppercase;
-  }
 
   /* WORK CARD COMPONENT */
-
-  .work-card,
-  .type {
-    font-weight: 100;
-  }
-  .work-type {
-    display: grid;
-    margin: 0 0.5em;
-    grid-template-rows: 100%;
-    grid-template-columns: auto 10fr;
-    overflow: hidden;
-  }
-  .type {
-    font-size: 4vw;
-    text-transform: uppercase;
-    grid-column: 1;
-  }
-  .underline {
-    border-bottom: 1px solid rgb(37, 37, 37);
-    position: relative;
-    align-self: baseline;
-    top: 50%;
-    left: 1%;
-    grid-column: 2;
-  }
   .work-number {
     margin-bottom: 0.3em;
     width: 100%;
@@ -384,51 +452,6 @@ body {
     font-size: 8vw;
   }
 
-  /* CONTACT CARD COMPONENT */
-  .contact-container {
-    text-align: center;
-    font-size: 4.5vw;
-    font-weight: 700;
-    font-style: italic;
-  }
-  .contact-container span {
-    font-weight: 100;
-    font-style: normal;
-  }
-  .contact-card {
-    display: grid;
-    justify-content: center;
-    font-size: 5vw;
-    font-weight: 100;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  .contact-outer > p {
-    margin: 0;
-    padding: 1vw;
-  }
-  .contact-outer {
-    margin: 0 auto;
-    min-height: 50vw;
-    min-width: 50vw;
-    max-width: 50vw;
-    max-height: 50vw;
-    height: 100;
-    border: 1px solid rgb(37, 37, 37);
-    border-radius: 50%;
-    background-color: #0053ad;
-    z-index: -10;
-  }
-
-  #contact-card1 {
-    margin-top: 0.5em;
-  }
-  #contact-card2 .contact-outer {
-    background-color: #f65600;
-  }
-  #contact-card3 .contact-outer {
-    background-color: #ffc610;
-  }
   #about5,
   #about6,
   #about7,
@@ -449,6 +472,37 @@ body {
 /**  NAV BAR  **/
 /**************/
 @media only screen and (min-width: 750px) {
+  .section1 > .container {
+    left: 1vw;
+  }
+
+  .nav-bar .nav {
+    width: auto;
+    margin: 0;
+
+    height: 50vw;
+  }
+  .nav {
+    position: fixed;
+    top: 1vw;
+    left: 4.7vw;
+    background-color: rgb(247, 242, 234);
+    z-index: 20000;
+  }
+  .nav-list {
+    align-items: center;
+    text-align: center;
+    padding: 6vw;
+    font-size: 0.7vw;
+  }
+  .nav-item {
+    padding-bottom: 2vw;
+    text-underline-position: under;
+  }
+
+  .about {
+    height: fit-content;
+  }
   #about5,
   #about6,
   #about7,
@@ -458,12 +512,13 @@ body {
   }
   .site-container {
     grid-template-columns: 0.75fr 15fr;
+    grid-template-rows: 10fr;
     position: relative;
   }
   .section1 {
     width: 100%;
     border-right: 1px solid rgb(37, 37, 37);
-    grid-row: 1 / -1;
+    grid-row: 1 / 4;
     grid-column: 1;
     position: relative;
     justify-self: center;
@@ -473,7 +528,7 @@ body {
   .section1 > .container {
     position: fixed;
     top: 6.3vw;
-    left: 0.5vw;
+    left: 1.3vw;
   }
   .section2 {
     margin: 0 auto;
@@ -491,11 +546,12 @@ body {
   .section3 {
     grid-column: 2;
   }
+
   .section4 {
     grid-column: 2;
   }
   .bar {
-    margin: 0.7vw;
+    /* margin: 0.7vw; */
     width: 2.6vw;
   }
 
@@ -873,5 +929,79 @@ body {
     height: 10vw;
     overflow: hidden;
     z-index: -20;
+  }
+  /* WORK CARD COMPONENT */
+  .work-card {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 20% 80%;
+
+    align-items: center;
+  }
+  .work-number,
+  .work-name {
+    justify-self: auto;
+  }
+  .work-type {
+    margin: 0 0.15em;
+  }
+  .work-type h2 {
+    font-size: initial;
+  }
+  .work-number {
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+
+    min-height: 201px;
+    max-height: 201px;
+    font-size: 11vw;
+  }
+  .work-name {
+    grid-row: 2;
+    width: 100%;
+    padding: 0.92vw 0;
+    min-height: 181px;
+    max-height: 181px;
+    font-size: 3vw;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .work-name p {
+    position: relative;
+    right: 7vw;
+    bottom: 1vw;
+  }
+  /* CONTACT CARD COMPONENT */
+  .contact-container {
+    margin-top: 8vw;
+    width: 100%;
+    font-size: 1.8vw;
+  }
+  .contact-me {
+    grid-row: 2;
+    grid-column: 2/4;
+  }
+
+  .contact-me span {
+    text-align: initial;
+    margin: 0 0 0 15vw;
+  }
+  .contact-me span::before {
+    content: "";
+    width: 10.3vw;
+    border-top: 3px rgb(37, 37, 37) solid;
+  }
+  .contact-card {
+    grid-row: 3;
+    grid-column: 2;
+    display: inline-block;
+    margin: 0;
+  }
+  .contact-outer {
+    max-width: 15vw;
+    min-width: 15vw;
+    max-height: 15vw;
+    min-height: 15vw;
   }
 }

@@ -10,7 +10,9 @@ export default function Contact() {
 
   return (
     <div className="contact-container">
-      Contact me — <span>Say hi!</span>
+      <div className="contact-me">
+        Contact me — <span>Say hi!</span>
+      </div>
       {contactCards}
     </div>
   );
