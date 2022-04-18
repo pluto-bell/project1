@@ -30,11 +30,19 @@ body {
   grid-row: 3;
 }
 
+.work-name p {
+  margin: 0;
+}
+
 /* General Styling */
 /**************/
 /**  NAV BAR  **/
 /**************/
-
+/* TODO: fade in animation on nav-bar */
+.nav-bar .nav {
+  width: 80vw;
+  margin: 0 0 0 10vw;
+}
 .bar {
   width: 30px;
   height: 2px;
@@ -219,6 +227,19 @@ body {
 #about4 > .about-inner-item2 span {
   position: absolute;
   font-size: 4.4vw;
+}
+
+.nav-list {
+  font-size: 2vw;
+  list-style: none;
+  padding: inherit;
+  text-align: center;
+}
+.nav-item {
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  font-size: 2em;
+  text-transform: uppercase;
 }
 .about-inner-item1 {
   position: absolute;
@@ -415,15 +436,6 @@ body {
     background-color: rgb(247, 242, 234);
     z-index: 9000;
   }
-  .nav-list {
-    list-style: none;
-  }
-  .nav-item {
-    margin-bottom: 0.5em;
-    font-weight: 700;
-    font-size: 2em;
-    text-transform: uppercase;
-  }
 
   /* WORK CARD COMPONENT */
   .work-number {
@@ -460,6 +472,37 @@ body {
 /**  NAV BAR  **/
 /**************/
 @media only screen and (min-width: 750px) {
+  .section1 > .container {
+    left: 1vw;
+  }
+
+  .nav-bar .nav {
+    width: auto;
+    margin: 0;
+
+    height: 50vw;
+  }
+  .nav {
+    position: fixed;
+    top: 1vw;
+    left: 4.7vw;
+    background-color: rgb(247, 242, 234);
+    z-index: 20000;
+  }
+  .nav-list {
+    align-items: center;
+    text-align: center;
+    padding: 6vw;
+    font-size: 0.7vw;
+  }
+  .nav-item {
+    padding-bottom: 2vw;
+    text-underline-position: under;
+  }
+
+  .about {
+    height: fit-content;
+  }
   #about5,
   #about6,
   #about7,
@@ -469,12 +512,13 @@ body {
   }
   .site-container {
     grid-template-columns: 0.75fr 15fr;
+    grid-template-rows: 10fr;
     position: relative;
   }
   .section1 {
     width: 100%;
     border-right: 1px solid rgb(37, 37, 37);
-    grid-row: 1 / -1;
+    grid-row: 1 / 4;
     grid-column: 1;
     position: relative;
     justify-self: center;
@@ -484,7 +528,7 @@ body {
   .section1 > .container {
     position: fixed;
     top: 6.3vw;
-    left: 0.5vw;
+    left: 1.3vw;
   }
   .section2 {
     margin: 0 auto;
@@ -507,7 +551,7 @@ body {
     grid-column: 2;
   }
   .bar {
-    margin: 0.7vw;
+    /* margin: 0.7vw; */
     width: 2.6vw;
   }
 
@@ -915,32 +959,49 @@ body {
   }
   .work-name {
     grid-row: 2;
-    width: 92.5%;
-    padding: 0 5vw 2vw 0;
+    width: 100%;
+    padding: 0.92vw 0;
     min-height: 181px;
     max-height: 181px;
     font-size: 3vw;
     justify-content: flex-end;
     align-items: flex-end;
   }
+  .work-name p {
+    position: relative;
+    right: 7vw;
+    bottom: 1vw;
+  }
   /* CONTACT CARD COMPONENT */
   .contact-container {
-    display: grid;
-    grid-template-columns: 40% 30% 30%;
-    grid-template-rows: 32% 70%;
-    font-size: 2vw;
+    margin-top: 8vw;
+    width: 100%;
+    font-size: 1.8vw;
   }
   .contact-me {
-    grid-row: 1;
-    grid-column: 1/-1;
+    grid-row: 2;
+    grid-column: 2/4;
+  }
+
+  .contact-me span {
+    text-align: initial;
+    margin: 0 0 0 15vw;
+  }
+  .contact-me span::before {
+    content: "";
+    width: 10.3vw;
+    border-top: 3px rgb(37, 37, 37) solid;
   }
   .contact-card {
+    grid-row: 3;
+    grid-column: 2;
+    display: inline-block;
     margin: 0;
   }
   .contact-outer {
-    max-width: 20vw;
-    max-height: 20vw;
-    min-height: 20vw;
-    min-width: 20vw;
+    max-width: 15vw;
+    min-width: 15vw;
+    max-height: 15vw;
+    min-height: 15vw;
   }
 }

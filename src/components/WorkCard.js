@@ -9,7 +9,9 @@ export default function WorkCard(props) {
         <div className="underline"></div>
       </div>
       <div className="work-item work-number">{props.number}</div>
-      <div className="work-item work-name">{props.name}</div>
+      <div className="work-item work-name">
+        <p>{props.name}</p>
+      </div>
     </div>
   );
 }
