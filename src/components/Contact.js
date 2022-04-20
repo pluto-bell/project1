@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <div className="contact-container">
       <div className="contact-me">
-        Contact me — <span>Say hi!</span>
+        Contact me<div className="dash"></div> <span>Say hi!</span>
       </div>
       {contactCards}
     </div>

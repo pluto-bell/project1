@@ -13,9 +13,7 @@ export default function ContactCard(props) {
   return (
     <div className="contact-card" id={`contact-card${props.id}`}>
       <div className="contact-outer">
-        <p id={`contact-inner${props.id}`}>
-          <span>{props.type}</span>
-        </p>
+        <p id={`contact-inner${props.id}`}></p>
       </div>
     </div>
   );

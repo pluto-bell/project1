@@ -1,7 +1,7 @@
 export default [
   {
     id: 1,
-    type: "email me email me ",
+    type: "../svgs/project1-contactCardsEMAIL.svg",
   },
   {
     id: 2,
