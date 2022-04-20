@@ -297,6 +297,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.work-name {
+  font-style: italic;
+}
 /* CONTACT CARD COMPONENT */
 .contact-container {
   text-align: center;
@@ -315,6 +318,25 @@ body {
   font-weight: 100;
   text-transform: uppercase;
   text-align: center;
+}
+#contact-inner1,
+#contact-inner2,
+#contact-inner3 {
+  background-image: url("./svgs/project1-contactCardsEMAIL.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 11vw;
+  height: 11vw;
+  position: relative;
+  top: 1vw;
+  left: 1vw;
+}
+#contact-inner2 {
+  background-image: url("./svgs/project1-contactCardsINSTA.svg");
+  top: 1.5vw;
+}
+#contact-inner3 {
+  background-image: url("./svgs/project1-contactCardsETC.svg");
 }
 .contact-outer > p {
   margin: 0;
@@ -342,6 +364,20 @@ body {
 #contact-card3 .contact-outer {
   background-color: #ffc610;
 }
+.contact-me {
+  display: flex;
+  justify-content: center;
+}
+.dash {
+  width: 6vw;
+  border-top: 2px solid black;
+  position: relative;
+  top: 3.2vw;
+  right: -1vw;
+}
+.contact-me span {
+  margin-left: 2vw;
+}
 
 /*/*/ /*/*/ /*/*/
 /*/*/ /*/*/ /*/*/
@@ -352,6 +388,24 @@ body {
 /*/*/ /*/*/ /*/*/
 /* GENERAL */
 @media only screen and (max-width: 749px) {
+  #contact-inner1,
+  #contact-inner2,
+  #contact-inner3 {
+    width: 43vw;
+    height: 43vw;
+    left: 2vw;
+    top: 3vw;
+  }
+  #contact-inner2 {
+    top: 4.5vw;
+    left: 2.2vw;
+  }
+  #contact-inner3 {
+    width: 40vw;
+    height: 40vw;
+    left: 4vw;
+    top: 4vw;
+  }
   #about5,
   #about6,
   #about7,
@@ -362,7 +416,7 @@ body {
   .site-container {
     display: grid;
     grid-template-columns: 0.5fr 5fr 0.5fr;
-    grid-template-rows: 0.1fr 0fr 0.5fr 1.3fr 0.01fr 0.1fr;
+    grid-template-rows: 0.09999fr 0fr 0.5fr 1.3fr 0.01fr 0.1fr;
   }
   .section1 {
     z-index: 1000;
@@ -451,6 +505,14 @@ body {
     border-radius: 30%/25%;
     font-size: 8vw;
   }
+  .work-type {
+    align-items: center;
+  }
+  .type2,
+  .type3,
+  .underline2 {
+    display: none;
+  }
 
   #about5,
   #about6,
@@ -458,6 +520,11 @@ body {
   #about8,
   #about9 {
     display: none;
+  }
+
+  /* CONTACT COMPONENT */
+  .dash {
+    margin: 0 2vw;
   }
 }
 
@@ -531,7 +598,7 @@ body {
     left: 1.3vw;
   }
   .section2 {
-    margin: 0 auto;
+    margin: 0 auto 2vw;
     grid-row: 1;
     grid-column: 2;
   }
@@ -944,6 +1011,19 @@ body {
   }
   .work-type {
     margin: 0 0.15em;
+    display: flex;
+    flex-direction: inherit;
+    grid-column: 1 / -1;
+  }
+  .work-type .underline {
+    width: 15vw;
+    border-top: 0.01vw solid black;
+    position: relative;
+    top: 2vw;
+    margin-right: 1.6vw;
+  }
+  .work-type .underline2 {
+    width: 89%;
   }
   .work-type h2 {
     font-size: initial;
@@ -953,16 +1033,16 @@ body {
     grid-column: 1;
     width: 100%;
 
-    min-height: 201px;
-    max-height: 201px;
+    min-height: 261px;
+    max-height: 261px;
     font-size: 11vw;
   }
   .work-name {
     grid-row: 2;
     width: 100%;
     padding: 0.92vw 0;
-    min-height: 181px;
-    max-height: 181px;
+    min-height: 241px;
+    max-height: 241px;
     font-size: 3vw;
     justify-content: flex-end;
     align-items: flex-end;
@@ -974,7 +1054,7 @@ body {
   }
   /* CONTACT CARD COMPONENT */
   .contact-container {
-    margin-top: 8vw;
+    margin: 8vw 0 10vw;
     width: 100%;
     font-size: 1.8vw;
   }
@@ -982,16 +1062,16 @@ body {
     grid-row: 2;
     grid-column: 2/4;
   }
+  .dash {
+    width: 22vw;
+    top: 1.2vw;
+  }
 
   .contact-me span {
     text-align: initial;
-    margin: 0 0 0 15vw;
+    margin: 0 0 0 2vw;
   }
-  .contact-me span::before {
-    content: "";
-    width: 10.3vw;
-    border-top: 3px rgb(37, 37, 37) solid;
-  }
+
   .contact-card {
     grid-row: 3;
     grid-column: 2;

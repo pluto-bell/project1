@@ -6,7 +6,10 @@ export default function WorkCard(props) {
     <div className="work-card">
       <div className="work-type">
         <h2 className="type">{props.type}</h2>
-        <div className="underline"></div>
+        <div className="underline underline1"></div>
+        <h2 className="type type2">{props.type}</h2>
+        <div className="underline underline2"></div>
+        <h2 className="type type3">{props.type}</h2>
       </div>
       <div className="work-item work-number">{props.number}</div>
       <div className="work-item work-name">
