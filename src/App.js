@@ -10,10 +10,19 @@ import WorkExamples from "./components/WorkExamples";
 
 export default function App() {
   const [toggle, setToggle] = useState(false);
+  // const [animate, setAnimate] = useState(false);
 
   function handleToggle() {
     setToggle((prevState) => !prevState);
   }
+
+  // function handleMouseEvent() {
+  //   set
+  // }
+
+  // useEffect(() => {
+
+  // }, mouse)
 
   return (
     <div id="main" className="site-container">

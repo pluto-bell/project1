@@ -9,6 +9,8 @@ const initialState = {
   about5: false,
   about6: false,
   about9: false,
+  about2inner1: false,
+  about2inner2: false,
   about4inner1: false,
   about4inner2: false,
   about7inner1: false,
@@ -20,6 +22,7 @@ const initialState = {
 //TODO: reset animations when mouse _leaves_ the div container of whole section
 export default function AboutCard(props) {
   const [animate, setAnimate] = useState(initialState);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   useEffect(() => {
     const circleType = document.getElementById("about2").firstElementChild;
@@ -43,6 +46,11 @@ export default function AboutCard(props) {
       });
     });
   }, [animate]);
+
+  window.addEventListener("resize", function (event) {
+    let newWidth = window.innerWidth;
+    setWindowSize(newWidth);
+  });
 
   return (
     <div
@@ -83,6 +91,7 @@ export default function AboutCard(props) {
           handleInnerMouseEvent(e);
         }}
       >
+        <div className="design"></div>
         <div className="heart"></div>
         <h2></h2>
         <span>{props.inner2}</span>
@@ -102,10 +111,15 @@ export default function AboutCard(props) {
       (idName === `about${idNum}inner2`)
     ) {
       card.children[1].style.transform = "none";
+      card.children[0].style.transform = "none";
+    } else if (idName === `about2inner2`) {
+      card.children[2].style.backgroundColor = "#1c7b32";
     } else if (idName === `about7inner1`) {
       card.children[0].style.transform = "none";
     } else if (idName === `about7inner2`) {
-      card.children[1].style.background = "#1c7b32";
+      card.children[2].style.background = "#1c7b32";
+    } else if (idName === `about8inner2`) {
+      card.children[2].style.transform = "none";
     }
   }
 
@@ -118,10 +132,12 @@ export default function AboutCard(props) {
     card1(card, idName, 6, 3);
     card1(card, idName, 9, 2);
 
+    card1(card, idName, 2, 0);
+    card1(card, idName, 2, 2);
     card1(card, idName, 4, 1);
     card1(card, idName, 4, 2);
-    card1(card, idName, 7, 1);
-    card1(card, idName, 7, 1);
+    card1(card, idName, 7, 2);
+    card1(card, idName, 7, 2);
     card1(card, idName, 8, 1);
     card1(card, idName, 8, 2);
   }
@@ -140,8 +156,7 @@ export default function AboutCard(props) {
   function handleMouseEvent(e) {
     const card = e.target.closest(".about-card");
     const inner1 = e.target.closest(".about-inner-item1");
-
-    if (card.id === "about2") {
+    if (card.id === "about2" && windowSize > "749") {
       playAnimation("about2");
       transitionEl(card, 2);
       transformEl(card, 2, 0, 100);
@@ -153,7 +168,6 @@ export default function AboutCard(props) {
       card.children[2].style.display = "block";
     } else if (card.id === "about3") {
       playAnimation("about3");
-
       transitionEl(card, 3);
       transformEl(card, 3, -100, 0);
     } else if (card.id === "about1") {
@@ -174,6 +188,24 @@ export default function AboutCard(props) {
   function handleInnerMouseEvent(e, num) {
     const innerItem = e.target.closest(".about-inner");
     const id = innerItem.id.replace(/[^\d.-]/g, "");
+    if (id === "21" && windowSize <= "749") {
+      playAnimation("about2inner1");
+      innerItem.children[0].style.transition = "transform 2s ease-in-out 0s";
+      rotateEl(innerItem, 0, 380);
+    }
+    // FIXME: not changing color on mobile view
+    if (id === "22" && windowSize <= "749") {
+      console.log(id);
+      console.log(e);
+      console.log(windowSize);
+      playAnimation("about2inner2");
+      innerItem.children[2].style.backgroundColor = `#ffc610`;
+    }
+    if (id === "42" && windowSize <= "749") {
+      playAnimation("about4inner2");
+      innerItem.children[0].style.transition = "transform 2s ease-in-out 0s";
+      rotateEl(innerItem, 0, 380);
+    }
     if (id === "41") {
       playAnimation("about4inner1");
       transitionEl(innerItem, 1);
@@ -191,17 +223,17 @@ export default function AboutCard(props) {
     }
     if (id === "42") {
       playAnimation("about4inner2");
-      innerItem.children[1].style.transition = "transform 2s ease-in-out 0s";
-      rotateEl(innerItem, 1, 380);
+      innerItem.children[0].style.transition = "transform 2s ease-in-out 0s";
+      rotateEl(innerItem, 0, 380);
     }
     if (id === "72") {
       playAnimation("about7inner2");
-      innerItem.children[1].style.backgroundColor = `#f65600`;
+      innerItem.children[2].style.backgroundColor = `#f65600`;
     }
     if (id === "82") {
       playAnimation("about8inner2");
-      transitionEl(innerItem, 1);
-      scaleEl(innerItem, 1, 150);
+      transitionEl(innerItem, 2);
+      scaleEl(innerItem, 2, 150);
     }
   }
 }

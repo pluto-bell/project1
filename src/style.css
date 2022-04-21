@@ -212,12 +212,6 @@ body {
   border-radius: 50%;
   background-color: #ffc610;
   left: 50%;
-
-  background-image: url("svgs/project1-designSmile.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  image-orientation: inherit;
-  background-size: 35vw;
 }
 #about4 > .about-inner-item2 h2 {
   border: 1px solid rgb(37, 37, 37);
@@ -227,6 +221,18 @@ body {
 #about4 > .about-inner-item2 span {
   position: absolute;
   font-size: 4.4vw;
+}
+/* TODO: TODO: TODO: TODO: */
+#about4 .about-inner-item2 .design {
+  position: absolute;
+  background-image: url("svgs/project1-designSmile.svg");
+  width: 35vw;
+  height: 35vw;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-orientation: inherit;
+  background-size: 35vw;
 }
 
 .nav-list {
@@ -413,6 +419,7 @@ body {
   #about9 {
     display: none;
   }
+
   .site-container {
     display: grid;
     grid-template-columns: 0.5fr 5fr 0.5fr;
@@ -439,6 +446,9 @@ body {
     grid-column: 2;
     grid-row: 5;
   }
+  #about2 {
+    border: none;
+  }
   #about2 > .about-inner-item2 h2 {
     margin: 0 auto;
     position: absolute;
@@ -449,7 +459,14 @@ body {
     background-color: #1c7b32;
     z-index: -10;
   }
-  #about2 .about-inner-item1 {
+  #about2 .about-inner-item1 .x {
+    position: absolute;
+  }
+
+  #about2 .about-inner-item1 h2 {
+    width: 35vw;
+    height: 35vw;
+    margin: 0;
     background-image: url("svgs/project1-FEexcitesMe.svg");
     background-position: center;
     background-repeat: no-repeat;
@@ -472,16 +489,6 @@ body {
     top: 30vw;
     right: 19vw;
   }
-  /* .work-item,
-  .nav {
-    display: flex;
-    width: 95%;
-    height: 8em;
-    border: 1px solid rgb(37, 37, 37);
-    border-radius: 500px;
-    align-items: center;
-    justify-content: center;
-  } */
 
   .nav {
     display: inline-flex;
@@ -577,6 +584,7 @@ body {
   #about9 {
     display: inline-block;
   }
+
   .site-container {
     grid-template-columns: 0.75fr 15fr;
     grid-template-rows: 10fr;
@@ -618,21 +626,26 @@ body {
     grid-column: 2;
   }
   .bar {
-    /* margin: 0.7vw; */
     width: 2.6vw;
   }
 
   .about-container > .about-card {
-    max-height: 14vw;
-    min-height: 14vw;
     height: fit-content;
 
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 50% 50%;
-    max-height: 28vw;
-    min-height: 28vw;
+    max-height: 28.3vw;
+    min-height: 28.3vw;
+    min-width: 13.7vw;
+    max-width: 13.7vw;
     border: 1px solid black;
+  }
+  .about-container > #about2,
+  .about-container > #about6,
+  .about-container > #about9 {
+    min-width: 13.8vw;
+    max-width: 13.8vw;
   }
 
   .about-card > .about-inner-item1 {
@@ -658,8 +671,8 @@ body {
   #about1,
   #about3,
   #about5 {
-    min-width: 28vw;
-    max-width: 28vw;
+    min-width: 27.82vw;
+    max-width: 27.82vw;
     max-height: 14vw;
     min-height: 14vw;
   }
@@ -763,6 +776,22 @@ body {
   #about8 .x {
     position: absolute;
   }
+  #about4 .about-inner-item1,
+  #about7 .about-inner-item1,
+  #about8 .about-inner-item1 {
+    height: 49.5%;
+  }
+
+  #about4 .about-inner-item1,
+  #about4 .about-inner-item2,
+  #about7 .about-inner-item1,
+  #about8 .about-inner-item1,
+  #about8 .about-inner-item2 {
+    width: 102%;
+  }
+  #about7 .about-inner-item2 {
+    width: 101%;
+  }
   #about4 .x::after,
   #about7 .x::after {
     position: absolute;
@@ -777,15 +806,21 @@ body {
 
   #about4 .about-inner-item2 {
     background-color: transparent;
-    width: 100%;
     height: 50%;
     left: 0;
     top: 50%;
     background-size: 11.5vw;
   }
   #about4 .about-inner-item2 h2 {
+    width: 15vw;
+    height: 15vw;
     border: none;
     background-color: transparent;
+  }
+  #about4 .about-inner-item2 .design {
+    background-size: inherit;
+    width: 12vw;
+    height: 12vw;
   }
   #about4 .heart {
     display: none;
@@ -889,12 +924,12 @@ body {
   #about7 .x::after {
     color: rgb(37, 37, 37);
   }
+
   #about7 .about-inner-item2 {
     position: absolute;
     top: 14.22vw;
     left: 0;
     outline: 1px solid rgb(37, 37, 37);
-    width: 100%;
     height: 50%;
     border-radius: 50%;
   }
@@ -930,7 +965,6 @@ body {
   #about8 .about-inner-item2 {
     position: absolute;
     outline: 1px solid rgb(37, 37, 37);
-    width: 100%;
     height: 50%;
     border-radius: 50%;
     top: 50%;
