@@ -2,33 +2,16 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 const initialState = {
-  contactCard1: false,
-  contactCard2: false,
-  contactCard3: false,
+  "contact-card1": false,
+  "contact-card2": false,
+  "contact-card3": false,
 };
 
 export default function ContactCard(props) {
   const [animate, setAnimate] = useState(initialState);
 
-  // useEffect(() => {
-  //   const animateEntries = Object.entries(animate);
-  //   const cardsArr = Array.from(
-  //     document.getElementsByClassName("contact-card")
-  //   );
-  //   console.log(animateEntries);
-  //   cardsArr.map((card) => {
-  //     const cardId = card.getAttribute("id");
-
-  //     animateEntries.map((entry) => {
-  //       if (!entry[1]) {
-  //         // resetElement(`${entry[0]}`);
-  //         console.log(entry[1]);
-  //       }
-  //     });
-  //   });
-  // }, [animate]);
-
-  function playAnimation(targetName) {
+  //Changes State of Target Card
+  function changeAnimationState(targetName) {
     setAnimate(initialState);
     setAnimate((prev) => {
       return {
@@ -37,12 +20,36 @@ export default function ContactCard(props) {
       };
     });
   }
+  // Handles stateChange and initiates animation
+  function handleMouseEvent(e) {
+    //target.closest insures that the right element gets used on both desktop and mobile view
+    changeAnimationState(e.target.closest(".contact-card").id);
+    rotateEl(e, 0, 360);
+  }
+
+  //Executes eery time animate state updates
+  useEffect(() => {
+    const contactCardEntries = Object.entries(animate);
+    const contactCardArr = Array.from(
+      document.getElementsByClassName("contact-card")
+    );
+
+    //if value of item is FALSE, turn off animation
+    contactCardArr.map((card) => {
+      contactCardEntries.map((i) => {
+        if (!i[1]) {
+          resetElement(`${i[0]}`);
+        }
+      });
+    });
+  }, [animate]);
+
   return (
     <div
       className="contact-card"
       id={`contact-card${props.id}`}
       onMouseEnter={(e) => {
-        handleMouseEvent(e, setAnimate);
+        handleMouseEvent(e);
       }}
     >
       <div className="contact-outer">
@@ -52,17 +59,15 @@ export default function ContactCard(props) {
   );
 }
 
-function rotateEl(card, child, num) {
-  card.children[child].style.transform = `rotate(${num}deg)`;
+//adds animation on element
+function rotateEl(e, child, num) {
+  //target.closest insures that the right element gets used on both desktop and mobile view
+  let target = e.target.closest(".contact-card");
+  target.children[child].style.transform = `rotate(${num}deg)`;
+  target.children[child].style.transition = "transform 2s ease-in-out 0s";
 }
 
-function handleMouseEvent(e, setAnimate) {
-  // console.log(e.target);
-  // const card = e.target.closest(".about-card");
-  // const inner1 = e.target.closest(".about-inner-item1");
-  // if (card.id === "about2" && windowSize > "749") {
-  //   playAnimation("about2");
-  //   transitionEl(card, 2);
-  //   transformEl(card, 2, 0, 100);
-  //   card.children[2].style.zIndex = "500";
+//removes animation from element
+function resetElement(cardId) {
+  document.getElementById(cardId).children[0].style.transform = "none";
 }
