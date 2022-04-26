@@ -306,6 +306,9 @@ body {
 .work-name {
   font-style: italic;
 }
+.right-flex-box {
+  background-image: url("https://i.insider.com/573398c75124c9183c56814f?width=1000&format=jpeg&auto=webp");
+}
 
 /* CONTACT CARD COMPONENT */
 .contact-container {
@@ -595,11 +598,11 @@ body {
     width: 100%;
     border-right: 1px solid rgb(37, 37, 37);
     grid-row: 1 / 4;
-    grid-column: 1;
+    /* grid-column: 1;
     position: relative;
     justify-self: center;
     display: grid;
-    justify-content: center;
+    justify-content: center; */
   }
   .section1 > .container {
     position: fixed;
