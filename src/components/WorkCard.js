@@ -69,6 +69,8 @@ export default function WorkCard(props) {
             style={{
               minWidth: "25vw",
               maxWidth: "25vw",
+              maxHeight: "42vw",
+              minHeight: "42vw",
               display: "block",
               border: "1px solid rgb(37, 37, 37)",
               textAlign: "center",
@@ -128,7 +130,7 @@ export default function WorkCard(props) {
           </div>
           <div
             className="right-flex-box"
-            style={{ height: "60vw", width: "100%" }}
+            style={{ maxHeight: "42.1vw", minHeight: "42.1vw", width: "100%" }}
           >
             <div className="right-flex-x"></div>
           </div>
