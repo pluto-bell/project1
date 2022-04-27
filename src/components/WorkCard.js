@@ -3,12 +3,53 @@ import ReactDOM from "react-dom";
 
 export default function WorkCard(props) {
   const [imgStyle, setImgStyle] = useState(false);
-  const [hidden, setHidden] = useState(true);
+  const initialState = Object.create({});
+  const [hidden, setHidden] = useState(initialState);
+  const arr = [];
 
-  function onClick(e) {
-    //TODO: make toggle between !!!
+  //Grab Name of Work and create Key=Value pair
+  Array.from(document.getElementsByClassName("work-card")).map((i) => {
+    const keyName = i.getAttribute("name");
+
+    arr.push(keyName);
+    initialState[`${keyName}`] = true;
+  });
+
+  function handleClick(e) {
+    Array.from(document.getElementsByClassName("work-card")).map((card) => {
+      // console.log(card.getAttribute("name"));
+    });
+
+    const keyName = e.target.closest(".work-card").getAttribute("name");
+    // console.log(e.target.closest(".work-card").hidden);
+
     setHidden((prev) => !prev);
+
+    // resetElement(keyName);
   }
+
+  //Executes eery time hidden state updates
+  useEffect(() => {
+    const workCardEntries = Object.entries(initialState);
+    const workCardArr = Array.from(
+      document.getElementsByClassName("work-card")
+    );
+
+    //if value of item is FALSE, turn off animation
+    workCardArr.map((card) => {
+      workCardEntries.map((i) => {
+        console.log(card.hidden);
+        if (!i[1]) {
+          resetElement(`${i[0]}`);
+        }
+      });
+    });
+    // console.log(hidden);
+    Object.entries(initialState).map((key) => {
+      console.log(key);
+    });
+    // console.log(initialState);
+  }, [hidden]);
 
   return (
     <div className="work-container">
@@ -16,7 +57,7 @@ export default function WorkCard(props) {
         className="work-card"
         name={props.name}
         style={hidden ? { display: "grid" } : { display: "none" }}
-        onClick={() => onClick()}
+        onClick={handleClick}
       >
         <div className="work-type">
           <h2 className="type">{props.type}</h2>
@@ -52,6 +93,7 @@ export default function WorkCard(props) {
         className={`work-card-extended`}
         id={`${props.name}`}
         style={hidden ? { display: "none" } : { display: "block" }}
+        onClick={() => setHidden((prev) => !prev)}
       >
         <div className="work-type">
           <h2 className="type">{props.type}</h2>
@@ -63,19 +105,9 @@ export default function WorkCard(props) {
         <div
           className="flex-box-container"
           style={hidden ? { display: "none" } : { display: "flex" }}
+          onClick={() => setHidden((prev) => !prev)}
         >
-          <div
-            className="left-grid-box"
-            style={{
-              minWidth: "25vw",
-              maxWidth: "25vw",
-              maxHeight: "42vw",
-              minHeight: "42vw",
-              display: "block",
-              border: "1px solid rgb(37, 37, 37)",
-              textAlign: "center",
-            }}
-          >
+          <div className="left-grid-box">
             <div
               className="work-item work-number"
               onMouseEnter={(e) => {
@@ -85,53 +117,19 @@ export default function WorkCard(props) {
                 handleMouseLeave(e);
               }}
               style={{
-                border: "none",
-                borderBottom: "1px solid rgb(37, 37, 37)",
-                borderRadius: "inherit",
-                minHeight: "17vw",
-                maxHeight: "17vw",
-                fontWeight: "100",
                 color: `${randomColor()} `,
               }}
             >
               {props.number}
             </div>
-            <p
-              style={{
-                borderBottom: "1px solid rgb(37, 37, 37)",
-                margin: "0",
-                padding: "1vw",
-                fontWeight: "100",
-              }}
-            >
-              {props.name}
-            </p>
-            <p
-              style={{
-                borderBottom: "1px solid rgb(37, 37, 37)",
-                margin: "0",
-                padding: "1vw",
-                fontWeight: "100",
-              }}
-            >
-              2000
-            </p>
-            <p
-              style={{
-                textAlign: "initial",
-                padding: "1.2vw",
-                fontWeight: "100",
-                fontSize: "1.6vw",
-              }}
-            >
+            <p>{props.name}</p>
+            <p>2000</p>
+            <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna.""
             </p>
           </div>
-          <div
-            className="right-flex-box"
-            style={{ maxHeight: "42.1vw", minHeight: "42.1vw", width: "100%" }}
-          >
+          <div className="right-flex-box">
             <div className="right-flex-x"></div>
           </div>
         </div>
@@ -181,4 +179,9 @@ function randomColor() {
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
   return shuffled[0];
+}
+
+function resetElement(cardId) {
+  // document.getElementById(cardId).children[0].style.transform = "none";
+  console.log(cardId);
 }
