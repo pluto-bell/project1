@@ -3,37 +3,136 @@ import ReactDOM from "react-dom";
 
 export default function WorkCard(props) {
   const [imgStyle, setImgStyle] = useState(false);
+  const initialState = Object.create({});
+  const [hidden, setHidden] = useState(initialState);
+  const arr = [];
+
+  //Grab Name of Work and create Key=Value pair
+  Array.from(document.getElementsByClassName("work-card")).map((i) => {
+    const keyName = i.getAttribute("name");
+
+    arr.push(keyName);
+    initialState[`${keyName}`] = true;
+  });
+
+  function handleClick(e) {
+    Array.from(document.getElementsByClassName("work-card")).map((card) => {
+      // console.log(card.getAttribute("name"));
+    });
+
+    const keyName = e.target.closest(".work-card").getAttribute("name");
+    // console.log(e.target.closest(".work-card").hidden);
+
+    setHidden((prev) => !prev);
+
+    // resetElement(keyName);
+  }
+
+  //Executes eery time hidden state updates
+  useEffect(() => {
+    const workCardEntries = Object.entries(initialState);
+    const workCardArr = Array.from(
+      document.getElementsByClassName("work-card")
+    );
+
+    //if value of item is FALSE, turn off animation
+    workCardArr.map((card) => {
+      workCardEntries.map((i) => {
+        console.log(card.hidden);
+        if (!i[1]) {
+          resetElement(`${i[0]}`);
+        }
+      });
+    });
+    // console.log(hidden);
+    Object.entries(initialState).map((key) => {
+      console.log(key);
+    });
+    // console.log(initialState);
+  }, [hidden]);
 
   return (
-    <div className="work-card">
-      <div className="work-type">
-        <h2 className="type">{props.type}</h2>
-        <div className="underline underline1"></div>
-        <h2 className="type type2">{props.type}</h2>
-        <div className="underline underline2"></div>
-        <h2 className="type type3">{props.type}</h2>
+    <div className="work-container">
+      <div
+        className="work-card"
+        name={props.name}
+        style={hidden ? { display: "grid" } : { display: "none" }}
+        onClick={handleClick}
+      >
+        <div className="work-type">
+          <h2 className="type">{props.type}</h2>
+          <div className="underline underline1"></div>
+          <h2 className="type type2">{props.type}</h2>
+          <div className="underline underline2"></div>
+          <h2 className="type type3">{props.type}</h2>
+        </div>
+        <div
+          className="work-item work-number"
+          onMouseEnter={(e) => {
+            handleMouseEvent(e);
+          }}
+          onMouseLeave={(e) => {
+            handleMouseLeave(e);
+          }}
+        >
+          {props.number}
+        </div>
+        <div
+          className="work-item work-name"
+          onMouseEnter={(e) => {
+            handleMouseEvent(e);
+          }}
+          onMouseLeave={(e) => {
+            handleMouseLeave(e);
+          }}
+        >
+          <p>{props.name}</p>
+        </div>
       </div>
       <div
-        className="work-item work-number"
-        onMouseEnter={(e) => {
-          handleMouseEvent(e);
-        }}
-        onMouseLeave={(e) => {
-          handleMouseLeave(e);
-        }}
+        className={`work-card-extended`}
+        id={`${props.name}`}
+        style={hidden ? { display: "none" } : { display: "block" }}
+        onClick={() => setHidden((prev) => !prev)}
       >
-        {props.number}
-      </div>
-      <div
-        className="work-item work-name"
-        onMouseEnter={(e) => {
-          handleMouseEvent(e);
-        }}
-        onMouseLeave={(e) => {
-          handleMouseLeave(e);
-        }}
-      >
-        <p>{props.name}</p>
+        <div className="work-type">
+          <h2 className="type">{props.type}</h2>
+          <div className="underline underline1"></div>
+          <h2 className="type type2">{props.type}</h2>
+          <div className="underline underline2"></div>
+          <h2 className="type type3">{props.type}</h2>
+        </div>
+        <div
+          className="flex-box-container"
+          style={hidden ? { display: "none" } : { display: "flex" }}
+          onClick={() => setHidden((prev) => !prev)}
+        >
+          <div className="left-grid-box">
+            <div
+              className="work-item work-number"
+              onMouseEnter={(e) => {
+                handleMouseEvent(e);
+              }}
+              onMouseLeave={(e) => {
+                handleMouseLeave(e);
+              }}
+              style={{
+                color: `${randomColor()} `,
+              }}
+            >
+              {props.number}
+            </div>
+            <p>{props.name}</p>
+            <p>2000</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna.""
+            </p>
+          </div>
+          <div className="right-flex-box">
+            <div className="right-flex-x"></div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -80,4 +179,9 @@ function randomColor() {
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
   return shuffled[0];
+}
+
+function resetElement(cardId) {
+  // document.getElementById(cardId).children[0].style.transform = "none";
+  console.log(cardId);
 }
