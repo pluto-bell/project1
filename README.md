@@ -7,7 +7,7 @@ I did the entire project wth _nearly_ no looking at the original code.
 Occasions where I did look at the code were: to find exact colors, occasionally look at width and/or height of an object, occasionally look at how many columns and/or rows were in a grid, and realizing SVGs were being used after attempting to re-create things in pure CSS. 
 
 ## What Did I learn?
-Major take aways: implenting React for the first time, noticing some gaps or uncertainties in current knowledge; creating SVGs for the first time, via inkspace; to go into future projects with having spent more time organizing the plan of action before jumping into the code.
+<u>Major take aways:</u> implenting React for the first time, noticing some gaps or uncertainties in current knowledge; creating SVGs for the first time, via inkspace; to go into future projects with having spent more time organizing the plan of action before jumping into the code.
 
 Other take aways: more familiarity with grid and general CSS styling, getting reacquinted with code after taking a break.
 
