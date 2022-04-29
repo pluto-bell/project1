@@ -34,6 +34,10 @@ body {
   margin: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 /* General Styling */
 /**************/
 /**  NAV BAR  **/
