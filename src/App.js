@@ -16,14 +16,6 @@ export default function App() {
     setToggle((prevState) => !prevState);
   }
 
-  // function handleMouseEvent() {
-  //   set
-  // }
-
-  // useEffect(() => {
-
-  // }, mouse)
-
   return (
     <div id="main" className="site-container">
       <div id="menu" className="section1">

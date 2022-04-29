@@ -3,61 +3,23 @@ import ReactDOM from "react-dom";
 
 export default function WorkCard(props) {
   const [imgStyle, setImgStyle] = useState(false);
-  const initialState = Object.create({});
-  const [hidden, setHidden] = useState(initialState);
-  const arr = [];
+  const [hidden, setHidden] = useState(true);
 
   //Grab Name of Work and create Key=Value pair
   Array.from(document.getElementsByClassName("work-card")).map((i) => {
     const keyName = i.getAttribute("name");
-
-    arr.push(keyName);
-    initialState[`${keyName}`] = true;
   });
 
   function handleClick(e) {
-    Array.from(document.getElementsByClassName("work-card")).map((card) => {
-      // console.log(card.getAttribute("name"));
-    });
-
-    const keyName = e.target.closest(".work-card").getAttribute("name");
-    // console.log(e.target.closest(".work-card").hidden);
-
     setHidden((prev) => !prev);
-
-    // resetElement(keyName);
   }
 
-  //Executes eery time hidden state updates
-  useEffect(() => {
-    const workCardEntries = Object.entries(initialState);
-    const workCardArr = Array.from(
-      document.getElementsByClassName("work-card")
-    );
-
-    //if value of item is FALSE, turn off animation
-    workCardArr.map((card) => {
-      workCardEntries.map((i) => {
-        console.log(card.hidden);
-        if (!i[1]) {
-          resetElement(`${i[0]}`);
-        }
-      });
-    });
-    // console.log(hidden);
-    Object.entries(initialState).map((key) => {
-      console.log(key);
-    });
-    // console.log(initialState);
-  }, [hidden]);
-
   return (
-    <div className="work-container">
+    <div className="work-container" onClick={handleClick}>
       <div
-        className="work-card"
+        className={`work-card`}
         name={props.name}
         style={hidden ? { display: "grid" } : { display: "none" }}
-        onClick={handleClick}
       >
         <div className="work-type">
           <h2 className="type">{props.type}</h2>
@@ -92,10 +54,13 @@ export default function WorkCard(props) {
       <div
         className={`work-card-extended`}
         id={`${props.name}`}
-        style={hidden ? { display: "none" } : { display: "block" }}
-        onClick={() => setHidden((prev) => !prev)}
+        style={props.hidden ? { display: "none" } : { display: "block" }}
+        onClick={handleClick}
       >
-        <div className="work-type">
+        <div
+          className="work-type"
+          style={hidden ? { display: "none" } : { display: "flex" }}
+        >
           <h2 className="type">{props.type}</h2>
           <div className="underline underline1"></div>
           <h2 className="type type2">{props.type}</h2>
@@ -104,8 +69,8 @@ export default function WorkCard(props) {
         </div>
         <div
           className="flex-box-container"
+          onClick={handleClick}
           style={hidden ? { display: "none" } : { display: "flex" }}
-          onClick={() => setHidden((prev) => !prev)}
         >
           <div className="left-grid-box">
             <div
@@ -179,9 +144,4 @@ function randomColor() {
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
   return shuffled[0];
-}
-
-function resetElement(cardId) {
-  // document.getElementById(cardId).children[0].style.transform = "none";
-  console.log(cardId);
 }
