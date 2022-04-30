@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/static/media/project1-anartist.249cf3ba.svg"
   },
   {
-    "revision": "bccb13cee81dab7bd482bf397b21e391",
-    "url": "/static/media/project1-FEexcitesMe.bccb13ce.svg"
-  },
-  {
     "revision": "01896a6c2bf079d17dc9d35fbc8ff236",
     "url": "/static/media/projecr1-ilovebut.01896a6c.svg"
+  },
+  {
+    "revision": "bccb13cee81dab7bd482bf397b21e391",
+    "url": "/static/media/project1-FEexcitesMe.bccb13ce.svg"
   },
   {
     "revision": "ea301eb920546243b95cd9a4af3423fd",
@@ -52,12 +52,12 @@ self.__precacheManifest = [
     "url": "/static/media/project1-ihate.ef12bd1a.svg"
   },
   {
-    "revision": "1b1ca02a919d6abd59e4f25d48b8a60d",
-    "url": "/static/media/project1-goodtaste.1b1ca02a.svg"
-  },
-  {
     "revision": "b3100572f1c058bf8bc3f2b87313325e",
     "url": "/static/media/project1-butlove.b3100572.svg"
+  },
+  {
+    "revision": "1b1ca02a919d6abd59e4f25d48b8a60d",
+    "url": "/static/media/project1-goodtaste.1b1ca02a.svg"
   },
   {
     "revision": "ffb8f72be5f1fac0b8d3b8413881c826",
