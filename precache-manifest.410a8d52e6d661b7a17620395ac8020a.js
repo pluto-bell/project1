@@ -48,16 +48,16 @@ self.__precacheManifest = [
     "url": "/static/media/project1-tobecome.ea301eb9.svg"
   },
   {
+    "revision": "ef12bd1a1fc1660b06b1526fe14cd0f3",
+    "url": "/static/media/project1-ihate.ef12bd1a.svg"
+  },
+  {
     "revision": "1b1ca02a919d6abd59e4f25d48b8a60d",
     "url": "/static/media/project1-goodtaste.1b1ca02a.svg"
   },
   {
     "revision": "b3100572f1c058bf8bc3f2b87313325e",
     "url": "/static/media/project1-butlove.b3100572.svg"
-  },
-  {
-    "revision": "ef12bd1a1fc1660b06b1526fe14cd0f3",
-    "url": "/static/media/project1-ihate.ef12bd1a.svg"
   },
   {
     "revision": "ffb8f72be5f1fac0b8d3b8413881c826",
